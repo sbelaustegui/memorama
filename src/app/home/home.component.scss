@@ -1,5 +1,15 @@
 @import "src/styles/variables";
 
-div {
+.content {
   padding-bottom: $footer-height;
+  text-align: center;
+
+  section {
+    padding: 5rem;
+
+    .play-btn {
+      width: 200px;
+      height: 45px;
+    }
+  }
 }
