@@ -31,13 +31,13 @@ export class CardComponent {
   clicked = new EventEmitter<number>();
 
   onClick() {
-    if (!this.disabled){
-      this.toggleFlip();
+    if (!this.disabled && !this.card.flipped){
+      this.flipCard();
       this.clicked.emit(this.card.flipped ? this.card.value : -1);
     }
   }
 
-  toggleFlip() {
-    this.card.flipped = !this.card.flipped;
+  flipCard() {
+    this.card.flipped = true;
   }
 }

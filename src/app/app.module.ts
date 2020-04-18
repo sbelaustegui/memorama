@@ -15,6 +15,7 @@ import {InstructionsDialog} from './home/instructions/instructions-dialog';
 import { GameComponent } from './game/game.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { CardComponent } from './game/card/card.component';
+import {GameEndDialog} from './game/end/game-end-dialog';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CardComponent } from './game/card/card.component';
     InstructionsDialog,
     GameComponent,
     CardComponent,
+    GameEndDialog,
   ],
   imports: [
     BrowserModule,
