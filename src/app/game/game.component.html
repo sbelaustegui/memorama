@@ -1,0 +1,24 @@
+<div class="game-container">
+  <mat-toolbar class="toolbar" color="secondary">
+    <mat-toolbar-row class="toolbar-row">
+      <span class="title" routerLink="">
+        Turno: Jugador
+        <span>{{getActivePlayer().id}}</span>
+      </span>
+      <span class="spacer"></span>
+      <span>Puntos:
+        <span>{{getActivePlayer().points}}</span>
+      </span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="game-body">
+    <mat-grid-list cols="4" class="cards-container">
+      <mat-grid-tile *ngFor="let card of cards">
+        <app-card class="card" [card]="card"></app-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <div class="bottom-container">
+      <button mat-raised-button color="warn" routerLink="/">Salir</button>
+    </div>
+  </div>
+</div>

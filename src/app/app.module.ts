@@ -11,7 +11,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {RouterModule} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
-import {InstructionsDialog} from './home/instructions-dialog';
+import {InstructionsDialog} from './home/instructions/instructions-dialog';
+import { GameComponent } from './game/game.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { CardComponent } from './game/card/card.component';
 
 @NgModule({
   declarations: [
@@ -20,17 +23,21 @@ import {InstructionsDialog} from './home/instructions-dialog';
     HeaderComponent,
     FooterComponent,
     InstructionsDialog,
+    GameComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
+      { path: '',     component: HomeComponent },
+      { path: 'game', component: GameComponent },
     ]),
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

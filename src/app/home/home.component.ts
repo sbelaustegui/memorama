@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {InstructionsDialog} from './instructions-dialog';
+import {InstructionsDialog} from './instructions/instructions-dialog';
 
 @Component({
   selector: 'app-home',

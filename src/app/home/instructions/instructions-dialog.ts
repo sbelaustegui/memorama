@@ -4,7 +4,8 @@ import {MatDialogRef} from '@angular/material/dialog';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'instructions-dialog',
-  templateUrl: 'instructions-dialog.html',
+  templateUrl: './instructions-dialog.html',
+  styleUrls: ['./instructions-dialog.scss']
 })
 // tslint:disable-next-line:component-class-suffix
 export class InstructionsDialog {
