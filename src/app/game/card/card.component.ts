@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import {Card} from '../../../shared/models/Card.model';
 
@@ -23,10 +23,21 @@ export class CardComponent {
 
   @Input()
   card: Card;
-  flip = 'inactive';
 
-  toggleFlip() {
-    this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
+  @Input()
+  disabled: boolean;
+
+  @Output()
+  clicked = new EventEmitter<number>();
+
+  onClick() {
+    if (!this.disabled){
+      this.toggleFlip();
+      this.clicked.emit(this.card.flipped ? this.card.value : -1);
+    }
   }
 
+  toggleFlip() {
+    this.card.flipped = !this.card.flipped;
+  }
 }

@@ -12,9 +12,9 @@
     </mat-toolbar-row>
   </mat-toolbar>
   <div class="game-body">
-    <mat-grid-list cols="4" class="cards-container">
+    <mat-grid-list cols="{{numberOfCols}}" class="cards-container">
       <mat-grid-tile *ngFor="let card of cards">
-        <app-card class="card" [card]="card"></app-card>
+        <app-card class="card" [card]="card" (clicked)="onCardClicked($event)" [disabled]="gameDisabled"></app-card>
       </mat-grid-tile>
     </mat-grid-list>
     <div class="bottom-container">
