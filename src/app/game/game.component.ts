@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Player} from '../../shared/models/Player.model';
 import {Card} from '../../shared/models/Card.model';
-import {delay} from 'rxjs/operators';
-import {InstructionsDialog} from '../home/instructions/instructions-dialog';
 import {MatDialog} from '@angular/material/dialog';
 import {GameEndDialog} from './end/game-end-dialog';
 
@@ -16,21 +14,8 @@ const NUMBER_OF_COLS = 4;
 })
 export class GameComponent implements OnInit {
 
-  players: Player[] = [
-    {
-      id: 1,
-      active: true,
-      points: 0,
-      cards: [],
-    },
-    {
-      id: 2,
-      active: false,
-      points: 0,
-      cards: [],
-    }
-  ];
-  cards: Card[] = [];
+  players: Player[];
+  cards: Card[];
   gameDisabled = false;
   selectedValue = -1;
 
@@ -39,6 +24,20 @@ export class GameComponent implements OnInit {
                       .fill(1)
                       .map((_, index) => new Card(index, index < 10 ? index : index - 10, false))
                       .sort(() => Math.random() - 0.5);
+    this.players = [
+      {
+        id: 1,
+        active: true,
+        points: 0,
+        cards: [],
+      },
+      {
+        id: 2,
+        active: false,
+        points: 0,
+        cards: [],
+      }
+    ];
   }
 
   ngOnInit(): void {
@@ -86,6 +85,7 @@ export class GameComponent implements OnInit {
   }
 
   finishGame() {
+    this.gameDisabled = true;
     const winner: Player = this.players.reduce((max, player) => max.points > player.points ? max : player);
     this.dialog.open(GameEndDialog, {
       width: '400px',

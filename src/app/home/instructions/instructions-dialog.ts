@@ -12,7 +12,7 @@ export class InstructionsDialog {
 
   constructor(public dialogRef: MatDialogRef<InstructionsDialog>) {}
 
-  onNoClick(): void {
+  onButtonClick(): void {
     this.dialogRef.close();
   }
 

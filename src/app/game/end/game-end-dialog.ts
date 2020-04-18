@@ -1,6 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {Player} from '../../../shared/models/Player.model';
+import {InstructionsDialog} from '../../home/instructions/instructions-dialog';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -11,5 +12,9 @@ import {Player} from '../../../shared/models/Player.model';
 // tslint:disable-next-line:component-class-suffix
 export class GameEndDialog {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public winner: Player) {}
+  constructor(public dialogRef: MatDialogRef<InstructionsDialog>, @Inject(MAT_DIALOG_DATA) public winner: Player) {}
+
+  onExit(): void {
+    this.dialogRef.close();
+  }
 }
