@@ -6,6 +6,9 @@ This game has to be played with two players. It is a particularly good game for 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
+### [Live Demo](https://memorama-sage.now.sh/)
+
+
 ## Run App
 
 Install a web server (such as lite-server or http-serve), and run it against the dist folder.
